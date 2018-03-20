@@ -77,9 +77,9 @@
 
     </div>
     <script src="https://google-ar.github.io/three.ar.js/third_party/three.js/three.js"></script>
-    <script src="https://google-ar.github.io/three.ar.js/third_party/three.js/VRControls.js"></script>
-    <script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
-    <script src="threex-portal-door.js"></script>
+<script src="https://google-ar.github.io/three.ar.js/third_party/three.js/VRControls.js"></script>
+<script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
+<script src="threex-portal-door.js"></script>
     <script>
 
 var vrDisplay;
@@ -211,7 +211,8 @@ function onClick () {
   // Fetch the pose data from the current frame
   var pose = vrFrameData.pose;
 
-  // Convert the pose orientation and position into
+    /*  
+    // Convert the pose orientation and position into
   // THREE.Quaternion and THREE.Vector3 respectively
   var ori = new THREE.Quaternion(
     pose.orientation[0],
@@ -240,6 +241,7 @@ function onClick () {
   clone.position.copy(pos);
   clone.quaternion.copy(ori);
 }
+*/
 </script>
 </body>
 </html>
