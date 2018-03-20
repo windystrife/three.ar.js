@@ -74,6 +74,7 @@
 <body>
     <div id="info">
         <a href="https://github.com/google-ar/three.ar.js">three.ar.js</a><span class="title">Walk through the portal</span>
+
     </div>
     <script src="../third_party/three.js/three.js"></script>
     <script src="../third_party/three.js/VRControls.js"></script>
@@ -150,7 +151,7 @@ function init() {
   vrControls = new THREE.VRControls(camera);
 
   // trying to get the portal door sample from Jerome Etienne
-  portal = new THREEx.Portal360("kikami.jpg", 1, 2);
+  portal = new THREEx.Portal360("1.jpg", 1, 2);
 
   // Bind our event handlers
   window.addEventListener('resize', onWindowResize, false);
