@@ -124,9 +124,13 @@ function init() {
     document.body.appendChild(canvas);
     scene = new THREE.Scene();
 
-  // Turn on the debugging panel
-  var arDebug = new THREE.ARDebug(vrDisplay);
-  document.body.appendChild(arDebug.getElement());
+    // Turn on the debugging panel
+    var arDebug = new THREE.ARDebug(vrDisplay, scene, {
+        showLastHit: false,
+        showPoseStatus: false,
+        showPlanes: true,
+    });
+    document.body.appendChild(arDebug.getElement());
 
  
 
