@@ -126,8 +126,8 @@ function init() {
 
     // Turn on the debugging panel
     var arDebug = new THREE.ARDebug(vrDisplay, scene, {
-        showLastHit: false,
-        showPoseStatus: false,
+        showLastHit: true,
+        showPoseStatus: true,
         showPlanes: true,
     });
     document.body.appendChild(arDebug.getElement());
@@ -221,7 +221,9 @@ function onWindowResize () {
  * When clicking on the screen, create a cube at the user's
  * current position.
  */
-function onClick () {
+function onClick() {
+
+
   // Fetch the pose data from the current frame
   var pose = vrFrameData.pose;
 
