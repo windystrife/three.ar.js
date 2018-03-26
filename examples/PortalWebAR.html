@@ -113,27 +113,20 @@ THREE.ARUtils.getARDisplay().then(function (display) {
 });
 
 function init() {
-
-
-    
-
-
   // Turn on the debugging panel
-     var arDebug = new THREE.ARDebug(vrDisplay);
-    
-     document.body.appendChild(arDebug.getElement());
+  var arDebug = new THREE.ARDebug(vrDisplay);
+  document.body.appendChild(arDebug.getElement());
 
+  // Setup the three.js rendering environment
+  renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  console.log('setRenderer size', window.innerWidth, window.innerHeight);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.autoClear = false;
+  canvas = renderer.domElement;
+  document.body.appendChild(canvas);
+  scene = new THREE.Scene();
 
-    // Setup the three.js rendering environment
-     renderer = new THREE.WebGLRenderer({ alpha: true });
-     renderer.setPixelRatio(window.devicePixelRatio);
-     console.log('setRenderer size', window.innerWidth, window.innerHeight);
-     renderer.setSize(window.innerWidth, window.innerHeight);
-     renderer.autoClear = false;
-     canvas = renderer.domElement;
-     document.body.appendChild(canvas);
-     scene = new THREE.Scene();
-  
   // Creating the ARView, which is the object that handles
   // the rendering of the camera stream behind the three.js
   // scene
@@ -166,8 +159,6 @@ function init() {
 
   // Kick off the render loop!
   update();
-
-
 }
 
 /**
@@ -220,7 +211,7 @@ function onClick () {
   // Fetch the pose data from the current frame
   var pose = vrFrameData.pose;
 
-     
+
     // Convert the pose orientation and position into
   // THREE.Quaternion and THREE.Vector3 respectively
   var ori = new THREE.Quaternion(
@@ -249,10 +240,8 @@ function onClick () {
   scene.add(clone);
   clone.position.copy(pos);
   clone.quaternion.copy(ori);
+}
 
-
- }
-
-</script>
+    </script>
 </body>
 </html>
