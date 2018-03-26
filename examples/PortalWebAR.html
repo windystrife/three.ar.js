@@ -113,6 +113,20 @@ THREE.ARUtils.getARDisplay().then(function (display) {
 });
 
 function init() {
+
+
+
+    // Setup the three.js rendering environment
+    renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    console.log('setRenderer size', window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.autoClear = false;
+    canvas = renderer.domElement;
+    document.body.appendChild(canvas);
+    scene = new THREE.Scene();
+
+
   // Turn on the debugging panel
     var arDebug = new THREE.ARDebug(vrDisplay, scene, {
         showLastHit: true,
@@ -121,15 +135,6 @@ function init() {
     });
   document.body.appendChild(arDebug.getElement());
 
-  // Setup the three.js rendering environment
-  renderer = new THREE.WebGLRenderer({ alpha: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  console.log('setRenderer size', window.innerWidth, window.innerHeight);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.autoClear = false;
-  canvas = renderer.domElement;
-  document.body.appendChild(canvas);
-  scene = new THREE.Scene();
 
   // Creating the ARView, which is the object that handles
   // the rendering of the camera stream behind the three.js
