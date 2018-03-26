@@ -11,7 +11,7 @@ THREEx.Portal360 = function (videoImageURL, doorWidth, doorHeight) {
     //////////////////////////////////////////////////////////////////////////////
     var isVideo = videoImageURL.match(/.(mp4|webm|ogv)/i) ? true : false
     if (isVideo) {
-        var video = document.createElement('video')
+        var video = document.createElement('video');
         video.width = 640;
         video.height = 360;
         video.loop = true;
