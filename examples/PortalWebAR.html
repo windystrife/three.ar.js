@@ -165,36 +165,30 @@ function init() {
  * our scene and rendering.
  */
 function update() {
-  
-    portal.update(vrFrameData.pose.position);
-
-    // Clears color from the frame before rendering the camera (arView) or scene.
-  renderer.clearColor();
-
-    // Render the device's camera stream on screen first of all.
-    // It allows to get the right pose synchronized with the right frame.
-  arView.render();
-
-    // Update our camera projection matrix in the event that
-    // the near or far planes have updated
+  // Update our camera projection matrix in the event that
+  // the near or far planes have updated
   camera.updateProjectionMatrix();
 
+  // From the WebVR API, populate `vrFrameData` with
+  // updated information for the frame
+  vrDisplay.getFrameData(vrFrameData);
 
-    // From the WebVR API, populate `vrFrameData` with
-    // updated information for the frame
-    //vrDisplay.getFrameData(vrFrameData);
-   
+  portal.update(vrFrameData.pose.position);
 
-    // Update our perspective camera's positioning
+  // Update our perspective camera's positioning
   vrControls.update();
 
-    // Render our three.js virtual scene
+  // Render the device's camera stream on screen
+  arView.render();
+
+  // Render our three.js virtual scene
   renderer.clearDepth();
   renderer.render(scene, camera);
 
-    // Kick off the requestAnimationFrame to call this function
-    // when a new VRDisplay frame is rendered
-  vrDisplay.requestAnimationFrame(update);
+  // Kick off the requestAnimationFrame to call this function
+  // on the next frame
+  requestAnimationFrame(update);
+
 }
 
 /**
