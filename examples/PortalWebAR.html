@@ -247,6 +247,14 @@ function onClick () {
   scene.add(clone);
   clone.position.copy(pos);
   clone.quaternion.copy(ori);
+
+
+  var arDebug = new THREE.ARDebug(vrDisplay, scene, {
+      showLastHit: false,
+      showPoseStatus: false,
+      showPlanes: true,
+  });
+  document.body.appendChild(arDebug.getElement());
 }
 
 </script>
