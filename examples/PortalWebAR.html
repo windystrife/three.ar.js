@@ -125,11 +125,7 @@ function init() {
     scene = new THREE.Scene();
 
     // Turn on the debugging panel
-    var arDebug = new THREE.ARDebug(vrDisplay, scene, {
-        showLastHit: true,
-        showPoseStatus: true,
-        showPlanes: true,
-    });
+    var arDebug = new THREE.ARDebug(vrDisplay, scene, { showPlanes: true });
     document.body.appendChild(arDebug.getElement());
 
  
