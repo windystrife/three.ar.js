@@ -113,6 +113,19 @@ THREE.ARUtils.getARDisplay().then(function (display) {
 });
 
 function init() {
+
+
+    // Setup the three.js rendering environment
+    renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    console.log('setRenderer size', window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.autoClear = false;
+    canvas = renderer.domElement;
+    document.body.appendChild(canvas);
+    scene = new THREE.Scene();
+
+
   // Turn on the debugging panel
    // var arDebug = new THREE.ARDebug(vrDisplay);
 
@@ -123,16 +136,7 @@ function init() {
     });
   document.body.appendChild(arDebug.getElement());
 
-  // Setup the three.js rendering environment
-  renderer = new THREE.WebGLRenderer({ alpha: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  console.log('setRenderer size', window.innerWidth, window.innerHeight);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.autoClear = false;
-  canvas = renderer.domElement;
-  document.body.appendChild(canvas);
-  scene = new THREE.Scene();
-
+  
   // Creating the ARView, which is the object that handles
   // the rendering of the camera stream behind the three.js
   // scene
@@ -157,7 +161,7 @@ function init() {
   vrControls = new THREE.VRControls(camera);
 
   // trying to get the portal door sample from Jerome Etienne
-  portal = new THREEx.Portal360("2.mp4", 1, 2);
+  portal = new THREEx.Portal360("1.jpg", 1, 2);
 
   // Bind our event handlers
   window.addEventListener('resize', onWindowResize, false);
