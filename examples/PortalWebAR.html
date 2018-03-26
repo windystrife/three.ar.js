@@ -114,7 +114,13 @@ THREE.ARUtils.getARDisplay().then(function (display) {
 
 function init() {
   // Turn on the debugging panel
-  var arDebug = new THREE.ARDebug(vrDisplay);
+   // var arDebug = new THREE.ARDebug(vrDisplay);
+
+    var arDebug = new THREE.ARDebug(vrDisplay, scene, {
+        showLastHit: false,
+        showPoseStatus: false,
+        showPlanes: true,
+    });
   document.body.appendChild(arDebug.getElement());
 
   // Setup the three.js rendering environment
@@ -151,7 +157,7 @@ function init() {
   vrControls = new THREE.VRControls(camera);
 
   // trying to get the portal door sample from Jerome Etienne
-  portal = new THREEx.Portal360("1.jpg", 1, 2);
+  portal = new THREEx.Portal360("2.mp4", 1, 2);
 
   // Bind our event handlers
   window.addEventListener('resize', onWindowResize, false);
@@ -159,6 +165,8 @@ function init() {
 
   // Kick off the render loop!
   update();
+
+
 }
 
 /**
