@@ -166,6 +166,8 @@ function init() {
  */
 function update() {
   
+    portal.update(vrFrameData.pose.position);
+
     // Clears color from the frame before rendering the camera (arView) or scene.
   renderer.clearColor();
 
@@ -181,7 +183,7 @@ function update() {
     // From the WebVR API, populate `vrFrameData` with
     // updated information for the frame
     //vrDisplay.getFrameData(vrFrameData);
-    portal.update(vrFrameData.pose.position);
+   
 
     // Update our perspective camera's positioning
   vrControls.update();
