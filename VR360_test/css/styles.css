@@ -1,0 +1,57 @@
+﻿h1 {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 1.4em;
+}
+
+h2 {
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 1.2em;
+	opacity: 0.5;
+}
+
+.container {
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -250px;
+}
+
+.logo {
+	width: 150px;
+	height: 130px;
+	margin-bottom: 64px;
+	background-image: url('../resources/ppvr-logo-new-white-300x260.png');
+	background-repeat: no-repeat;
+	background-size: 150px 130px;
+}
+
+input {
+	width: 100%;
+    line-height: 36px;
+    font-size: 18px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.5);
+    margin-bottom: 32px;
+}
+
+#buttons {
+	line-height: 0;
+}
+
+#buttons>* {
+    margin: 0 10px 0 0;
+}
+
+#buttons>:first-child {
+    margin-right: 0;
+}

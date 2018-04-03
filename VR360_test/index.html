@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="WebVR">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Purple Pill VR - WebVR</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: #222222;
+            background-image: url('data:image/png;base64,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'),linear-gradient(to bottom, #222222 0%,#444444 100%);
+            font-family: Lato, sans-serif;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.6em;
+            text-rendering: optimizeLegibility;
+            color: rgb(197, 197, 197);
+        }
+    </style>
+    <link rel='stylesheet' href='css/styles.css' type='text/css' media='all' />
+    <link rel="stylesheet" id="ls-google-fonts-css" href="http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <script src="js/hls.js"></script>
+</head>
+<body onLoad="init()">
+    <div id="main" class="container">
+        <div class="logo"></div>
+        <div class="input">
+            <input id="hls_url" type="text" name="url" placeholder="http://mydomain.com/stream.m3u8" autofocus>
+        </div>
+        <div class="disclaimer">
+            <h1>Experimental Web VR player with HLS streaming support.</h1><h2>Please provide a HLS stream url in the input box above and press enter.</h2>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

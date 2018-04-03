@@ -12,6 +12,7 @@ THREEx.Portal360 = function (videoImageURL, doorWidth, doorHeight) {
     var isVideo = videoImageURL.match(/.(mp4|webm|ogv)/i) ? true : false
     if (isVideo) {
         var video = document.createElement('video');
+
         video.width = 640;
         video.height = 360;
         video.loop = true;
@@ -162,7 +163,7 @@ THREEx.Portal360.prototype._buildOutsideMesh = function (texture360, doorWidth, 
     //		add squareCache
     //////////////////////////////////////////////////////////////////////////////
     var squareCache = THREEx.Portal360.buildSquareCache()
-    squareCache.scale.x = doorWidth
+    squareCache.scale.y = doorWidth
     squareCache.scale.y = doorHeight
     doorOutsideCenter.add(squareCache)
 
@@ -238,10 +239,10 @@ THREEx.Portal360.prototype._buildRectangularFrame = function (radius, width, hei
 //		update function
 //////////////////////////////////////////////////////////////////////////////
 
-THREEx.Portal360.prototype.update = function (position) {
+THREEx.Portal360.prototype.update = function () {
     // determine if the user is isOutsidePortal
-    var worldPosition = new THREE.Vector3().fromArray(position);
-    var localPosition = this.object3d.worldToLocal(worldPosition)
+    var localPosition = new THREE.Vector3
+    this.object3d.worldToLocal(localPosition)
     var isOutsidePortal = localPosition.z >= 0 ? true : false
 
     // handle mesh visibility based on isOutsidePortal
